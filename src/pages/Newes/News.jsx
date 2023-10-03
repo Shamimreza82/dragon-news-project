@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaBookmark, FaCodeFork, FaEye } from "react-icons/fa6";
 import PropTypes from 'prop-types';
+import Marquee from "react-fast-marquee";
 
 const News = ({ news }) => {
-    console.log(news);
+  const [isShow, setIsShow] = useState(true)
   const { title, author, image_url, details,total_view, rating  } = news;
   const all = details.slice(0, 350);
 
@@ -23,12 +24,18 @@ const News = ({ news }) => {
         </div>
       </div>
       <div className="">
-        <p className="font-bold py-2">{title}</p>
-        <img src={image_url} alt="" />
-        <p className="py-3">
+        <Marquee>
+        <p className="font-bold py-">{title}</p>
+        </Marquee>
+        <img className="hover:scale-[1.20] duration-300 relative z-50" src={image_url} alt="" />
+        {
+          isShow ? <p className="py-3">
           {all}...
-          <button className="text-red-400 ml-3">Read More</button>
+        </p> : <p className="py-3">
+          {details}
         </p>
+        }
+        <button onClick={()=> setIsShow(!isShow)} className="text-red-500">Read More</button>
       </div>
       <hr className="w-[80%] mx-auto" />
       <div className="flex items-center py-4 justify-between">

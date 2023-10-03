@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { NewsContex } from '../../Home/Home';
+import Marquee from "react-fast-marquee";
 
 const LeftSideNav = () => {
     const [categorys, setCategorys] = useState([])
+    const news = useContext(NewsContex)
+
 
     useEffect(()=> {
         fetch('categories.json')
@@ -23,6 +27,23 @@ const LeftSideNav = () => {
                     </NavLink>
                 ))
             }
+            <div>
+            
+            {
+                news.map(newss => <div key={newss.id} className='space-y-2 mt-4'>
+                    <img src={newss.image_url} alt="" />
+                     <Marquee>
+                     <h1>n{newss.title}</h1> 
+                     
+                     </Marquee>
+                     <div>
+                        <h1>News  {newss.author.published_date }</h1>
+                    </div>  
+                </div> )
+            }
+            
+           
+            </div>
         </div>
     );
 };

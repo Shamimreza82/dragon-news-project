@@ -25,15 +25,15 @@ const RightSideNav = () => {
       <div className="mt-3">
         <h2 className="text-xl py-2 font-bold">Find Us On</h2>
         <a href="#" className=" flex items-center py-3 rounded-t-lg border font-bold hover:bg-slate-300  ">
-          <FaFacebook className="mx-2 text-xl"></FaFacebook>
+          <FaFacebook className="mx-2 text-xl text-blue-600"></FaFacebook>
             <p className="text-gray-500">facebook</p>
         </a>
         <a href="#" className=" flex items-center py-3 border-x font-bold hover:bg-slate-300  ">
-          <FaTwitter className="mx-2 text-xl"></FaTwitter>
+          <FaTwitter className="mx-2 text-xl text-sky-500"></FaTwitter>
           <p className="text-gray-500">Twitter</p>
         </a>
         <a href="#" className=" flex items-center py-3 rounded-b-lg border font-bold hover:bg-slate-300 ">
-          <FaInstagram className="mx-2 text-xl"></FaInstagram>
+          <FaInstagram className="mx-2 text-xl text-amber-600"></FaInstagram>
           <p className="text-gray-500">Instagrame</p>
         </a>
       </div>

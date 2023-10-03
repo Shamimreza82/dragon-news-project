@@ -18,7 +18,7 @@ const Navber = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 my-2">
+    <div className="navbar bg-base-100 my-2 ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -54,7 +54,7 @@ const Navber = () => {
             <img src={Profile} />
           </div>
         </label>
-        <Link>
+        <Link to='/login'>
           <button className="btn">login</button>
         </Link>
       </div>

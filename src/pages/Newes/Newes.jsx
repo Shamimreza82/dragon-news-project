@@ -6,7 +6,8 @@ import News from './News';
 const Newes = () => {
 
     const [newes, setNewes] = useState([])
-    console.log(newes);
+    const [isShow, setIsShow] = useState(false)
+
     useEffect(()=> {
         fetch('news.json')
        .then(res => res.json())
@@ -15,10 +16,12 @@ const Newes = () => {
 
     return (
         <div>
-            <h2 className='text-xl py-3 font-bold'>Dragon News Home</h2>
+            <h2 className={ isShow ? "text-red-600 ": 'text-xl py-3 font-bold'}>Dragon News Home</h2>
             {
-                newes.map(news => <News key={news.id} news={news}></News>)
+              isShow ?  newes.slice(0, 3).map(news => <News key={news.id} news={news}></News>) : newes.map(news => <News key={news.id} news={news}></News>)
             }
+            
+            <button onClick={()=> setIsShow(!isShow)} className='btn'>See All</button>
         </div>
     );
 };
