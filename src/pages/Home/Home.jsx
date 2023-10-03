@@ -4,6 +4,7 @@ import Navber from '../Shared/Navber/Navber';
 import LeftSideNav from '../Shared/LeftSideNav/LeftSideNav';
 import RightSideNav from '../Shared/RightSideNav.jsx/RightSideNav';
 import BrakingNews from './BrakingNews';
+import Newes from '../Newes/Newes';
 
 const Home = () => {
     return (
@@ -16,7 +17,7 @@ const Home = () => {
                     <LeftSideNav></LeftSideNav>
                 </div>
                 <div className='md:col-span-2 border'>
-                    <h2>News comming soon </h2>
+                    <Newes></Newes>
                 </div>
                 <div className='border'>
                     <RightSideNav></RightSideNav>

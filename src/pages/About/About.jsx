@@ -1,9 +1,10 @@
 import React from 'react';
+import Navber from '../Shared/Navber/Navber';
 
 const About = () => {
     return (
         <div>
-            About
+            <Navber></Navber>
         </div>
     );
 };

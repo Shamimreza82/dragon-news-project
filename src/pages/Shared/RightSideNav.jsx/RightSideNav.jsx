@@ -39,14 +39,14 @@ const RightSideNav = () => {
       </div>
 
        {/* Q-Zone  */}
-        <div className="space-y-5 mt-3 px-3">
+        <div className="space-y-5 mt-3 ">
             <h2 className="text-xl py-2 font-bold">Q-Zone</h2>
             <img src={Qzone} alt="" />
             <img src={Qzone1} alt="" />
             <img src={Qzone2} alt="" />
         </div>
         {/* Banner  */}
-        <div className="px-3 mt-3">
+        <div className="mt-3">
             <img src={bg} alt="" />
         </div>
 
