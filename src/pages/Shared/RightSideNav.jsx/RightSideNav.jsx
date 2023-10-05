@@ -3,14 +3,28 @@ import Qzone from '../../../assets/qZone1.png'
 import Qzone1 from '../../../assets/qZone2.png'
 import Qzone2 from '../../../assets/qZone3.png'
 import bg from '../../../assets/bg.png'
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 
 const RightSideNav = () => {
+  const {googleSineIn} = useContext(AuthContext)
+
+  const handleGoogleLogin =() => {
+    googleSineIn()
+    .then(result => {
+      console.log(result.user);
+    })
+    .catch(error => {
+      console.error(error);
+    })
+  }
+
   return (
     <div>
       <div className="space-y-2">
         <h2 className="text-xl py-2 font-bold">Login With</h2>
-        <button className="btn btn-outline w-full hover:bg-sky-600 hover:border-emerald-300">
+        <button onClick={handleGoogleLogin} className="btn btn-outline w-full hover:bg-sky-600 hover:border-emerald-300">
           <FaGoogle className="text-xl"></FaGoogle>
             Login with Google
         </button>

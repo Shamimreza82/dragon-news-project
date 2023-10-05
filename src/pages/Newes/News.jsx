@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { FaBookmark, FaCodeFork, FaEye } from "react-icons/fa6";
 import PropTypes from 'prop-types';
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 const News = ({ news }) => {
   const [isShow, setIsShow] = useState(true)
-  const { title, author, image_url, details,total_view, rating  } = news;
+  const {_id, title, author, image_url, details,total_view, rating  } = news;
   const all = details.slice(0, 350);
 
   return (
@@ -23,7 +24,7 @@ const News = ({ news }) => {
           <FaCodeFork></FaCodeFork>
         </div>
       </div>
-      <div className="">
+      <div >
         <Marquee>
         <p className="font-bold py-">{title}</p>
         </Marquee>
@@ -35,7 +36,12 @@ const News = ({ news }) => {
           {details}
         </p>
         }
-        <button onClick={()=> setIsShow(!isShow)} className="text-red-500">Read More</button>
+       <div className="flex justify-between">
+            <button onClick={()=> setIsShow(!isShow)} className="text-red-500">Read More</button>
+            <Link className="text-green-600 font-bold" to={`/newsdetails/${_id}`} >Detalis page</Link>
+       </div>
+          
+      
       </div>
       <hr className="w-[80%] mx-auto" />
       <div className="flex items-center py-4 justify-between">
